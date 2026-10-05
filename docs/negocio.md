@@ -100,7 +100,8 @@ O diferencial não é a coleira — que tende a virar commodity — nem o dashbo
 
 ### Próximos passos imediatos
 
-- [ ] Resolver a conectividade do gateway na rede da fazenda
+- [ ] Estabilizar o link do gateway em campo (o último teste, sem Starlink, foi instável)
+- [ ] Cyberdeck: gateway com sistema operacional e tela próprios, para monitoramento local sem rede
 - [ ] Melhorar a geração automática de piquetes em períodos de seca e com poucas imagens limpas
 - [ ] Coleira em PCB própria
 - [ ] Piloto com +1 coleira ativa

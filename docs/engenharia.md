@@ -58,7 +58,7 @@ Do sistema em funcionamento, não de raciocínio sobre ele.
 |---|---|---|
 | Proteção de nível lógico entre MCU e rádio | Hardware | Mitigado em firmware em parte dos pinos; divisores resistivos pendentes |
 | Coleira não guarda fixos quando não alcança o gateway | Perda de dados | Buffer em memória não volátil planejado ("modo mochila") |
-| Conectividade do gateway na rede local | Implantação | Falhou no último teste de campo — prioridade nº 1 |
+| Conectividade do gateway | Implantação | Instável no último teste de campo, feito sem Starlink. Caminhos: um link de internet estável na sede, ou um **cyberdeck** — o gateway com sistema operacional e tela próprios, exibindo o rebanho localmente sem precisar de rede |
 | Alertas de cerca derivados no navegador | Arquitetura | Funciona com o painel aberto; migrar a derivação para o gateway, que já vê todo fixo |
 | Leitura de bateria | Funcionalidade | Depende da nova PCB |
 | Validação da integração Sentinel-2 com conta de produção | Integração | Pendente de credenciais definitivas |

@@ -162,3 +162,4 @@ Os cases foram modelados do zero. Clique para abrir no visualizador 3D interativ
 | **Buffer de fixos na coleira** | Hoje, se a coleira não alcança o gateway, o fixo do ciclo é descartado. Com buffer, ela descarrega o histórico ao voltar à cobertura ("modo mochila") |
 | **Medição de bateria** | Só será mostrada no painel quando for medida de verdade |
 | **Segunda coleira ativa** | Validar anticolisão e endereçamento em campo |
+| **Gateway como cyberdeck** | O link de internet ficou instável no último teste (sem Starlink). Com sistema operacional e tela próprios, o gateway passa a mostrar o rebanho direto na sede, sem depender de rede — a nuvem vira sincronização, não requisito |
