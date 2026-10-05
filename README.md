@@ -16,7 +16,6 @@ fundidas em um **sistema de decisão de pastejo**: quando tirar o lote, para ond
 
 ![Status](https://img.shields.io/badge/status-protótipo_funcional-a8f040?style=for-the-badge&labelColor=0b0f0a)
 ![Fase](https://img.shields.io/badge/fase-03_·_piloto-a8f040?style=for-the-badge&labelColor=0b0f0a)
-![Programa](https://img.shields.io/badge/Future_Lab-2026-a8f040?style=for-the-badge&labelColor=0b0f0a)
 
 ![Next.js](https://img.shields.io/badge/Next.js_16-000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React_19-20232a?style=flat-square&logo=react&logoColor=61dafb)
@@ -137,7 +136,7 @@ Tudo abaixo existe, roda, e foi construído do zero — da solda ao pixel.
 - [x] Gerenciamento de energia do MCU e *sleep* do rádio por pinos de modo
 - [x] Gateway em Raspberry Pi 5 com módulo LoRa, case 3D e serviço `systemd`
 - [x] **Store-and-forward**: buffer local em SQLite que sobrevive a quedas de internet
-- [x] Modelos 3D (GLB) da coleira e do gateway, exibidos interativamente no site
+- [x] Modelos 3D próprios da coleira e do gateway ([abrir no visualizador 3D](models/coleira.stl))
 
 </td>
 <td width="50%" valign="top">
@@ -163,11 +162,9 @@ Tudo abaixo existe, roda, e foi construído do zero — da solda ao pixel.
 
 <table>
 <tr>
-<td colspan="2"><img src="assets/hardware/render-coleira-gateway.jpg" alt="Coleira e gateway Con-Hectar" width="100%"/></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><img src="assets/hardware/coleira-em-campo.jpg" alt="Coleira instalada em um animal" width="100%"/><br/><sub><b>Teste de fixação em animal.</b> Coleira no case final, posicionada no pescoço.</sub></td>
-<td width="50%" valign="top"><img src="assets/hardware/coleira-aberta.jpg" alt="Coleira aberta mostrando a eletrônica" width="100%"/><br/><sub><b>Por dentro da coleira.</b> MCU, GNSS, rádio LoRa e bateria acomodados em case 3D projetado sob medida.</sub></td>
+<td width="33%" valign="top"><img src="assets/hardware/coleira-e-gateway.jpg" alt="Coleira e gateway Con-Hectar" width="100%"/><br/><sub><b>Coleira e gateway.</b> Os dois dispositivos nos cases finais, impressos em 3D.</sub></td>
+<td width="33%" valign="top"><img src="assets/hardware/coleira-aberta.jpg" alt="Coleira aberta mostrando a eletrônica" width="100%"/><br/><sub><b>Por dentro da coleira.</b> MCU, GNSS, rádio LoRa e bateria acomodados em case projetado sob medida.</sub></td>
+<td width="33%" valign="top"><img src="assets/hardware/coleira-em-campo.jpg" alt="Coleira instalada em um animal" width="100%"/><br/><sub><b>Teste de fixação em animal.</b> Coleira no case final, posicionada no pescoço.</sub></td>
 </tr>
 </table>
 
@@ -175,8 +172,17 @@ Tudo abaixo existe, roda, e foi construído do zero — da solda ao pixel.
 
 | ① Esquemático | ② Coleira na bancada | ③ Gateway na bancada | ④ Case final |
 |:-:|:-:|:-:|:-:|
-| <img src="assets/hardware/esboco-esquematico.jpg" width="200"/> | <img src="assets/hardware/prototipo-coleira-bancada.jpg" width="200"/> | <img src="assets/hardware/prototipo-gateway-bancada.jpg" width="200"/> | <img src="assets/hardware/coleira-e-gateway.jpg" width="200"/> |
+| <img src="assets/hardware/esboco-esquematico.jpg" width="200"/> | <img src="assets/hardware/prototipo-coleira-bancada.jpg" width="200"/> | <img src="assets/hardware/prototipo-gateway-bancada.jpg" width="200"/> | <img src="assets/hardware/coleira-case.jpg" width="130"/> <img src="assets/hardware/gateway-case.jpg" width="140"/> |
 | Arquitetura e ciclo de sono rascunhados à mão | Arduino + GNSS + LoRa em jumpers | Raspberry Pi 5 + LoRa via UART | Coleira e gateway em cases impressos em 3D |
+
+#### Modelos 3D
+
+Os cases foram modelados do zero e são os mesmos arquivos exibidos no visualizador 3D da landing page. O GitHub os abre em um visualizador interativo — **clique para girar e dar zoom**:
+
+| [🟡 Coleira — `models/coleira.stl`](models/coleira.stl) | [⬛ Gateway — `models/gateway.stl`](models/gateway.stl) |
+|:-:|:-:|
+| <a href="models/coleira.stl"><img src="assets/hardware/modelo-3d-coleira.png" width="340" alt="Modelo 3D da coleira"/></a> | <a href="models/gateway.stl"><img src="assets/hardware/modelo-3d-gateway.png" width="240" alt="Modelo 3D do gateway"/></a> |
+| 235 × 46 × 80 mm · tampa, base e cobertura | 99 × 72 × 174 mm com antena |
 
 | Componente | Coleira | Gateway |
 |---|---|---|
@@ -212,13 +218,26 @@ Tudo abaixo existe, roda, e foi construído do zero — da solda ao pixel.
 | **Relatórios** | Indicadores históricos para decisão e prestação de contas |
 | **Configurações** | Fazenda, intervalos de amostragem, limiares |
 
-<details>
-<summary><b>📱 App de campo e conceito de interface</b></summary>
-<br/>
-<img src="assets/platform/conceito-mobile-web.jpg" alt="Conceito do app de campo e do painel web" width="100%" />
-<br/>
-<sub>O mesmo sistema de design em celular (peão no pasto), tablet e desktop (gerente no escritório). App construído em Expo/React Native, com mapa, rebanho, cercas e alertas.</sub>
-</details>
+#### App de campo e conceito de interface
+
+O mesmo sistema de design no celular do peão, no tablet em campo e no desktop do gerente. O app é construído em Expo/React Native.
+
+| Mapa principal | Ficha do animal | Cercas virtuais | Central de alertas |
+|:-:|:-:|:-:|:-:|
+| <img src="assets/platform/conceito-app-mapa.jpg" width="190"/> | <img src="assets/platform/conceito-app-animal.jpg" width="190"/> | <img src="assets/platform/conceito-app-cercas.jpg" width="190"/> | <img src="assets/platform/conceito-app-alertas.jpg" width="190"/> |
+
+<table>
+<tr>
+<td width="68%"><img src="assets/platform/conceito-web-dashboard.jpg" width="100%" alt="Conceito do dashboard web"/></td>
+<td width="32%"><img src="assets/platform/conceito-tablet.jpg" width="100%" alt="Conceito do app em tablet"/></td>
+</tr>
+<tr>
+<td><sub><b>Dashboard web</b> — resumo do rebanho, sugestão de manejo e indicadores de pastagem.</sub></td>
+<td><sub><b>Tablet em campo</b> — mapa e cercas em tela cheia.</sub></td>
+</tr>
+</table>
+
+<sub>Telas de conceito do design inicial. A versão em funcionamento é o painel acima; alguns campos do conceito (como temperatura e bateria) foram retirados porque o hardware atual não os mede.</sub>
 
 ➜ Detalhes em [`docs/plataforma.md`](docs/plataforma.md)
 
@@ -322,7 +341,7 @@ Uma regra da casa: **o que foi medido é marcado como medido; o que foi calculad
 |:-:|---|---|
 | **01** | Entender o problema | Pesquisa e conversas com pecuaristas · esquemático da eletrônica · consolidação da tese |
 | **02** | Provar a cadeia | Eletrônica em bancada · fazenda-piloto definida · documento de requisitos de produto · planejamento do software |
-| **03** · *atual* | Construir o produto | **15/08** coleira C0001 → gateway → nuvem → mapa ao vivo, ponta a ponta · **19/08** motor de rotação, sync NDVI Sentinel-2, divisão automática de piquetes e motor de alertas · cases 3D, modelos 3D e teste de fixação em animal · demo final no Future Lab 2026 |
+| **03** · *atual* | Construir o produto | **15/08** coleira C0001 → gateway → nuvem → mapa ao vivo, ponta a ponta · **19/08** motor de rotação, sync NDVI Sentinel-2, divisão automática de piquetes e motor de alertas · cases 3D, modelos 3D e teste de fixação em animal |
 
 <br/>
 
@@ -345,7 +364,7 @@ Uma regra da casa: **o que foi medido é marcado como medido; o que foi calculad
 
 <img src="assets/brand/logo-mark-neon.svg" alt="" height="40" />
 
-**Con-Hectar** · Goiânia, GO · Desenvolvido no **Future Lab 2026**
+**Con-Hectar** · Goiânia, GO
 
 Fundador: **Gabriel Bassi** — [gabrielbassidebm@gmail.com](mailto:gabrielbassidebm@gmail.com)
 
