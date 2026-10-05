@@ -224,6 +224,25 @@ Os cases foram modelados do zero — são os mesmos modelos do visualizador 3D d
 
 <sub>Painel em funcionamento: mapa de satélite com piquetes, lotes e coleiras ao vivo; à direita, "o que fazer hoje" e o resumo do rebanho.</sub>
 
+<table>
+<tr>
+<td width="50%"><img src="assets/platform/telas/pastagens-rotacao.jpg" width="100%" alt="Pastagens — mapa da rotação"/></td>
+<td width="50%"><img src="assets/platform/telas/cercas.jpg" width="100%" alt="Cercas virtuais"/></td>
+</tr>
+<tr>
+<td valign="top"><sub><b>Pastagens</b> — pastagem dividida automaticamente em 8 piquetes, com a fila de rotação numerada e o tempo de descanso restante de cada um.</sub></td>
+<td valign="top"><sub><b>Cercas</b> — piquetes, área de mata como zona proibida e a coleira C0001 sobre imagem de satélite.</sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="assets/platform/telas/coleiras.jpg" width="100%" alt="Coleiras — diagnóstico de silêncio"/></td>
+<td width="50%"><img src="assets/platform/telas/movimentacao.jpg" width="100%" alt="Movimentação"/></td>
+</tr>
+<tr>
+<td valign="top"><sub><b>Coleiras</b> — o classificador de silêncio em ação: sem sombra de rádio que explique, a coleira é marcada como falha de dispositivo.</sub></td>
+<td valign="top"><sub><b>Movimentação</b> — trajeto por animal e período; dias sem fixos de qualidade são recusados em vez de inventados.</sub></td>
+</tr>
+</table>
+
 | Módulo | O que resolve |
 |---|---|
 | **Visão geral** | O que fazer hoje — recomendações priorizadas, não um mural de gráficos |
