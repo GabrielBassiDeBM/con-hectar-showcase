@@ -257,38 +257,6 @@ Os cases foram modelados do zero — são os mesmos modelos do visualizador 3D d
 | **Relatórios** | Indicadores históricos para decisão e prestação de contas |
 | **Configurações** | Fazenda, intervalos de amostragem, limiares |
 
-#### App de campo e conceito de interface
-
-O mesmo sistema de design no celular do peão, no tablet em campo e no desktop do gerente. O app é construído em Expo/React Native.
-
-<table>
-<tr>
-<th width="25%">Mapa principal</th>
-<th width="25%">Ficha do animal</th>
-<th width="25%">Cercas virtuais</th>
-<th width="25%">Central de alertas</th>
-</tr>
-<tr>
-<td align="center"><img src="assets/platform/conceito-app-mapa.jpg" width="100%" alt="Mapa principal"/></td>
-<td align="center"><img src="assets/platform/conceito-app-animal.jpg" width="100%" alt="Ficha do animal"/></td>
-<td align="center"><img src="assets/platform/conceito-app-cercas.jpg" width="100%" alt="Cercas virtuais"/></td>
-<td align="center"><img src="assets/platform/conceito-app-alertas.jpg" width="100%" alt="Central de alertas"/></td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td width="70%" align="center"><img src="assets/platform/conceito-web-dashboard.jpg" width="100%" alt="Conceito do dashboard web"/></td>
-<td width="30%" align="center"><img src="assets/platform/conceito-tablet.jpg" width="100%" alt="Conceito do app em tablet"/></td>
-</tr>
-<tr>
-<td><sub><b>Dashboard web</b> — resumo do rebanho, sugestão de manejo e indicadores de pastagem.</sub></td>
-<td><sub><b>Tablet em campo</b> — mapa e cercas em tela cheia.</sub></td>
-</tr>
-</table>
-
-<sub>Telas de conceito do design inicial. A versão em funcionamento é o painel acima; alguns campos do conceito (como temperatura e bateria) foram retirados porque o hardware atual não os mede.</sub>
-
 ➜ Detalhes em [`docs/plataforma.md`](docs/plataforma.md)
 
 <br/>
@@ -361,7 +329,7 @@ Uma regra da casa: **o que foi medido é marcado como medido; o que foi calculad
 <td width="50%" valign="top">
 
 #### Desafios honestos
-- Conexão do Raspberry Pi à rede local falhou no último teste de campo
+- Conexão do gateway à internet instável no último teste de campo, feito sem Starlink
 - Jumpers e módulos de prateleira elevaram custo e tamanho da coleira
 - Imagens de satélite escassas em períodos de seca geraram erros nos piquetes
 - O sono do MCU rende pouco: o consumo está no GNSS e na placa de desenvolvimento
@@ -370,7 +338,8 @@ Uma regra da casa: **o que foi medido é marcado como medido; o que foi calculad
 <td width="50%" valign="top">
 
 #### Próximos passos
-- [ ] Resolver a conectividade do gateway em campo
+- [ ] Estabilizar o link do gateway em campo
+- [ ] **Cyberdeck**: gateway com sistema operacional e tela próprios, para monitorar o rebanho na fazenda sem depender de rede
 - [ ] Melhorar a geração automática de piquetes
 - [ ] Coleira em **PCB própria** com MCU de baixo consumo
 - [ ] Modo *power-save* do GNSS e buffer de fixos na coleira
