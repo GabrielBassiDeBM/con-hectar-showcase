@@ -45,19 +45,36 @@ O coração operacional:
 - **Divisão automática** de uma pastagem em piquetes, com pré-visualização antes de confirmar
 - Curva de esgotamento do piquete ao longo do ciclo de ocupação
 
+<img src="../assets/platform/telas/pastagens-plano.jpg" width="100%" alt="Plano de rotação"/>
+
+<img src="../assets/platform/telas/pastagens-rotacao.jpg" width="100%" alt="Mapa da rotação"/>
+
+
 ### Cercas
 Cercas virtuais com regras de entrada/saída e períodos de vigência. A detecção usa distância assinada até o polígono com **histerese** (dentro → aproximando → fora), para que um animal andando na linha da cerca não gere uma sequência de alertas piscando. As regras foram modeladas para que seja **impossível declarar uma combinação incoerente**.
 
 > A coleira **detecta e avisa**; ela não contém o animal. Não há atuador no hardware, e o produto não promete o contrário.
 
+<img src="../assets/platform/telas/cercas.jpg" width="100%" alt="Cercas virtuais"/>
+
+
 ### Rebanho
 Animais e lotes, com o vínculo animal ↔ coleira registrado ao longo do tempo.
+
+<img src="../assets/platform/telas/rebanho.jpg" width="100%" alt="Rebanho"/>
+
 
 ### Coleiras
 Estado de cada dispositivo, último fixo, qualidade do enlace de rádio e o **diagnóstico de silêncio** (ver [`inteligencia.md`](inteligencia.md#silêncio)).
 
+<img src="../assets/platform/telas/coleiras.jpg" width="100%" alt="Coleiras e diagnóstico de silêncio"/>
+
+
 ### Movimentação
 Distância diária filtrada, área de uso, sinuosidade e **orçamento de atividade** (parado · pastejo · deslocamento · trânsito) por animal e por lote, sempre comparados contra o próprio lote no mesmo dia.
+
+<img src="../assets/platform/telas/movimentacao.jpg" width="100%" alt="Movimentação"/>
+
 
 ### Saúde
 Eventos sanitários registrados manualmente e anomalias comportamentais detectadas automaticamente, cada uma com a evidência que a produziu.
