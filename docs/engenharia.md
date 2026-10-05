@@ -1,4 +1,4 @@
-<img src="../assets/brand/logo-wordmark-tight-duotone.svg" height="26" alt="Con-Hectar"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="../assets/brand/logo-wordmark-tight-duotone.svg"><img src="../assets/brand/logo-wordmark-tight-dark.svg" alt="Con-Hectar" height="26"/></picture>
 
 # Diário de engenharia
 

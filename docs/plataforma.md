@@ -1,4 +1,4 @@
-<img src="../assets/brand/logo-wordmark-tight-duotone.svg" height="26" alt="Con-Hectar"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="../assets/brand/logo-wordmark-tight-duotone.svg"><img src="../assets/brand/logo-wordmark-tight-dark.svg" alt="Con-Hectar" height="26"/></picture>
 
 # Plataforma
 
@@ -72,9 +72,31 @@ Indicadores históricos para decisão e prestação de contas; parâmetros da fa
 
 ## App de campo
 
-| Mapa principal | Ficha do animal | Cercas virtuais | Central de alertas |
-|:-:|:-:|:-:|:-:|
-| <img src="../assets/platform/conceito-app-mapa.jpg" width="180"/> | <img src="../assets/platform/conceito-app-animal.jpg" width="180"/> | <img src="../assets/platform/conceito-app-cercas.jpg" width="180"/> | <img src="../assets/platform/conceito-app-alertas.jpg" width="180"/> |
+<table>
+<tr>
+<th width="25%">Mapa principal</th>
+<th width="25%">Ficha do animal</th>
+<th width="25%">Cercas virtuais</th>
+<th width="25%">Central de alertas</th>
+</tr>
+<tr>
+<td align="center"><img src="../assets/platform/conceito-app-mapa.jpg" width="100%" alt="Mapa principal"/></td>
+<td align="center"><img src="../assets/platform/conceito-app-animal.jpg" width="100%" alt="Ficha do animal"/></td>
+<td align="center"><img src="../assets/platform/conceito-app-cercas.jpg" width="100%" alt="Cercas virtuais"/></td>
+<td align="center"><img src="../assets/platform/conceito-app-alertas.jpg" width="100%" alt="Central de alertas"/></td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="70%" align="center"><img src="../assets/platform/conceito-web-dashboard.jpg" width="100%" alt="Conceito do dashboard web"/></td>
+<td width="30%" align="center"><img src="../assets/platform/conceito-tablet.jpg" width="100%" alt="Conceito do app em tablet"/></td>
+</tr>
+<tr>
+<td><sub><b>Dashboard web</b> — resumo do rebanho, sugestão de manejo e indicadores de pastagem.</sub></td>
+<td><sub><b>Tablet em campo</b> — mapa e cercas em tela cheia.</sub></td>
+</tr>
+</table>
 
 <sub>Telas de conceito do design inicial; campos que o hardware não mede (temperatura, bateria) foram retirados da versão em funcionamento.</sub>
 

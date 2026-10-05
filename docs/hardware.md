@@ -1,10 +1,10 @@
-<img src="../assets/brand/logo-wordmark-tight-duotone.svg" height="26" alt="Con-Hectar"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="../assets/brand/logo-wordmark-tight-duotone.svg"><img src="../assets/brand/logo-wordmark-tight-dark.svg" alt="Con-Hectar" height="26"/></picture>
 
 # Hardware
 
 [← Voltar ao README](../README.md)
 
-<p align="center"><img src="../assets/hardware/coleira-e-gateway.jpg" alt="Gateway (cinza) e coleira (amarela)" width="420"/></p>
+<img src="../assets/hardware/produtos-hero.jpg" alt="Gateway (cinza) e coleira (amarela)" width="100%"/>
 
 Dois dispositivos, ambos projetados, montados, programados e encapsulados pela Con-Hectar: a **coleira** (amarela), que vai no animal, e o **gateway** (cinza), que fica na sede da fazenda.
 
@@ -14,7 +14,7 @@ Dois dispositivos, ambos projetados, montados, programados e encapsulados pela C
 
 <table>
 <tr>
-<td width="40%"><img src="../assets/hardware/coleira-case.jpg" width="100%"/></td>
+<td width="30%" align="center" valign="top"><img src="../assets/hardware/card-coleira.jpg" width="100%" alt="Coleira"/></td>
 <td valign="top">
 
 **Função:** acordar, obter um fixo GNSS, entregá-lo ao gateway com confirmação e voltar a dormir — gastando o mínimo de energia possível.
@@ -71,7 +71,7 @@ Implementamos o sono profundo do MCU, o desligamento de periféricos internos e 
 
 <table>
 <tr>
-<td width="40%"><img src="../assets/hardware/gateway-case.jpg" width="100%"/></td>
+<td width="30%" align="center" valign="top"><img src="../assets/hardware/card-gateway.jpg" width="100%" alt="Gateway"/></td>
 <td valign="top">
 
 **Função:** concentrar os sinais LoRa de várias coleiras e retransmitir os dados para a nuvem via internet.
@@ -99,20 +99,56 @@ Inclui ainda um script de preparação que libera a UART em um Pi recém-instala
 
 ## Evolução do protótipo
 
-| Fase 01 · Esquemático | Fase 02 · Bancada | Fase 02 · Bancada | Fase 03 · Case |
-|:-:|:-:|:-:|:-:|
-| <img src="../assets/hardware/esboco-esquematico.jpg" width="190"/> | <img src="../assets/hardware/prototipo-coleira-bancada.jpg" width="190"/> | <img src="../assets/hardware/prototipo-gateway-bancada.jpg" width="190"/> | <img src="../assets/hardware/coleira-aberta.jpg" width="190"/> |
-| Blocos, barramentos e o ciclo de sono desenhados à mão — já apontando para um MCU de baixo consumo e chave eletrônica na alimentação | Coleira: MCU + GNSS + LoRa + bateria em jumpers | Gateway: Raspberry Pi 5 + LoRa em protoboard | Eletrônica acomodada no case 3D da coleira |
-
-<img src="../assets/hardware/coleira-em-campo.jpg" width="420" align="right" alt="Coleira em animal"/>
+<table>
+<tr>
+<th width="25%">Fase 01 · Esquemático</th>
+<th width="25%">Fase 02 · Coleira</th>
+<th width="25%">Fase 02 · Gateway</th>
+<th width="25%">Fase 03 · Case</th>
+</tr>
+<tr>
+<td><img src="../assets/hardware/evo-1-esquematico.jpg" width="100%" alt="Esquemático"/></td>
+<td><img src="../assets/hardware/evo-2-coleira-bancada.jpg" width="100%" alt="Coleira em bancada"/></td>
+<td><img src="../assets/hardware/evo-3-gateway-bancada.jpg" width="100%" alt="Gateway em bancada"/></td>
+<td><img src="../assets/hardware/evo-4-case-final.jpg" width="100%" alt="Cases finais"/></td>
+</tr>
+<tr>
+<td valign="top"><sub>Blocos, barramentos e ciclo de sono desenhados à mão — já apontando para um MCU de baixo consumo e chave eletrônica na alimentação</sub></td>
+<td valign="top"><sub>MCU + GNSS + LoRa + bateria em jumpers</sub></td>
+<td valign="top"><sub>Raspberry Pi 5 + LoRa em protoboard</sub></td>
+<td valign="top"><sub>Coleira e gateway nos cases impressos em 3D</sub></td>
+</tr>
+</table>
 
 ### Em animal
 
-Teste de fixação da coleira no case final. O formato alongado distribui o peso ao longo da correia, e a face superior carrega a marca para identificação visual a distância.
+<table>
+<tr>
+<td width="40%" align="center"><img src="../assets/hardware/card-coleira-em-campo.jpg" width="100%" alt="Coleira em animal"/></td>
+<td valign="top">
 
-Os modelos 3D da coleira e do gateway estão em [`models/`](../models) e abrem no visualizador 3D do GitHub: [coleira](../models/coleira.stl) · [gateway](../models/gateway.stl). Os mesmos modelos são exibidos de forma interativa na landing page, com um visualizador Three.js.
+Teste de fixação da coleira, já no case final, no pescoço de um animal.
 
-<br clear="right"/>
+O teste valida o encaixe da correia e o posicionamento do case. Os próximos passos de campo estão no fim desta página: PCB própria e uma segunda coleira ativa.
+
+</td>
+</tr>
+</table>
+
+### Modelos 3D
+
+Os cases foram modelados do zero. Clique para abrir no visualizador 3D interativo do GitHub — os mesmos modelos aparecem na landing page, renderizados com Three.js.
+
+<table>
+<tr>
+<td align="center" width="50%"><a href="../models/coleira.stl"><img src="../assets/hardware/modelo-3d-coleira.png" width="100%" alt="Modelo 3D da coleira"/></a></td>
+<td align="center" width="50%"><a href="../models/gateway.stl"><img src="../assets/hardware/modelo-3d-gateway.png" width="100%" alt="Modelo 3D do gateway"/></a></td>
+</tr>
+<tr>
+<td align="center"><a href="../models/coleira.stl"><b>Coleira</b></a> · <code>models/coleira.stl</code></td>
+<td align="center"><a href="../models/gateway.stl"><b>Gateway</b></a> · <code>models/gateway.stl</code></td>
+</tr>
+</table>
 
 ---
 
