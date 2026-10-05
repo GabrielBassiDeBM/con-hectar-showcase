@@ -72,7 +72,11 @@ Indicadores históricos para decisão e prestação de contas; parâmetros da fa
 
 ## App de campo
 
-<img src="../assets/platform/conceito-mobile-web.jpg" alt="App de campo e painel" width="100%"/>
+| Mapa principal | Ficha do animal | Cercas virtuais | Central de alertas |
+|:-:|:-:|:-:|:-:|
+| <img src="../assets/platform/conceito-app-mapa.jpg" width="180"/> | <img src="../assets/platform/conceito-app-animal.jpg" width="180"/> | <img src="../assets/platform/conceito-app-cercas.jpg" width="180"/> | <img src="../assets/platform/conceito-app-alertas.jpg" width="180"/> |
+
+<sub>Telas de conceito do design inicial; campos que o hardware não mede (temperatura, bateria) foram retirados da versão em funcionamento.</sub>
 
 App multiplataforma em Expo com mapa da fazenda (MapLibre nativo e web), rebanho, cercas e ajustes. O desenho de cercas funciona com o dedo, no próprio pasto. A mesma base de dados e o mesmo vocabulário visual do painel.
 

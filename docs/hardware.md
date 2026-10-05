@@ -4,7 +4,7 @@
 
 [← Voltar ao README](../README.md)
 
-<img src="../assets/hardware/render-coleira-gateway.jpg" alt="Gateway (cinza) e coleira (amarela)" width="100%"/>
+<p align="center"><img src="../assets/hardware/coleira-e-gateway.jpg" alt="Gateway (cinza) e coleira (amarela)" width="420"/></p>
 
 Dois dispositivos, ambos projetados, montados, programados e encapsulados pela Con-Hectar: a **coleira** (amarela), que vai no animal, e o **gateway** (cinza), que fica na sede da fazenda.
 
@@ -110,7 +110,7 @@ Inclui ainda um script de preparação que libera a UART em um Pi recém-instala
 
 Teste de fixação da coleira no case final. O formato alongado distribui o peso ao longo da correia, e a face superior carrega a marca para identificação visual a distância.
 
-Os modelos 3D da coleira e do gateway (GLB) também são exibidos de forma interativa na landing page, com um visualizador Three.js.
+Os modelos 3D da coleira e do gateway estão em [`models/`](../models) e abrem no visualizador 3D do GitHub: [coleira](../models/coleira.stl) · [gateway](../models/gateway.stl). Os mesmos modelos são exibidos de forma interativa na landing page, com um visualizador Three.js.
 
 <br clear="right"/>
 

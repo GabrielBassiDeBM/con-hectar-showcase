@@ -112,9 +112,3 @@ O diferencial não é a coleira — que tende a virar commodity — nem o dashbo
 | **Confiança** | O cliente confia no dado | Ingestão robusta, mapa vivo, mapa de cobertura de rádio, desambiguação de silêncio, alertas críticos, app offline-first e alertas por WhatsApp |
 | **Decisão** | As recomendações são seguidas | Pipeline de satélite completo, motor de rotação com dias de pasto restantes, curva de esgotamento, relatório mensal automático |
 | **Alavancagem** | O dado vira ativo | Projeção de vazio forrageiro e simulador de cenários, módulo reprodutivo, modelos aprendidos por fazenda, integrações (PNIB, balança, GTA, CAR) e visão multi-fazenda para consultores |
-
----
-
-<div align="center">
-<sub>Agradecimento especial à Isabelle Lemos, pela recomendação ao programa, e à equipe da Rede MIRA.</sub>
-</div>
