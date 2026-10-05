@@ -141,7 +141,7 @@ Os cases foram modelados do zero. Clique para abrir no visualizador 3D interativ
 
 <table>
 <tr>
-<td align="center" width="50%"><a href="../models/coleira.stl"><img src="../assets/hardware/modelo-3d-coleira.png" width="100%" alt="Modelo 3D da coleira"/></a></td>
+<td align="center" width="50%"><a href="../models/coleira.stl"><img src="../assets/hardware/coleira-3d.png" width="100%" alt="Modelo 3D da coleira"/></a></td>
 <td align="center" width="50%"><a href="../models/gateway.stl"><img src="../assets/hardware/modelo-3d-gateway.png" width="100%" alt="Modelo 3D do gateway"/></a></td>
 </tr>
 <tr>
