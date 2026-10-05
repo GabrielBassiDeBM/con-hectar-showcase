@@ -124,7 +124,7 @@ Inclui ainda um script de preparação que libera a UART em um Pi recém-instala
 
 <table>
 <tr>
-<td width="40%" align="center"><img src="../assets/hardware/card-coleira-em-campo.jpg" width="100%" alt="Coleira em animal"/></td>
+<td width="50%" align="center"><img src="../assets/hardware/campo-wide.jpg" width="100%" alt="Coleira em animal"/></td>
 <td valign="top">
 
 Teste de fixação da coleira, já no case final, no pescoço de um animal.

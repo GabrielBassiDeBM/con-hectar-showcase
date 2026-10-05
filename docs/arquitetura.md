@@ -10,17 +10,7 @@ A Con-Hectar é um sistema ponta a ponta: do receptor GNSS no pescoço do animal
 
 ## 1. A cadeia
 
-```mermaid
-flowchart LR
-  GPS[GNSS] -->|NMEA| COL[Coleira<br/>firmware C++]
-  COL -->|LoRa sub-GHz| GW[Gateway<br/>Raspberry Pi 5]
-  GW -.->|ACK — a coleira só dorme depois disto| COL
-  GW --> SQL[(SQLite<br/>buffer local)]
-  SQL -->|HTTPS · quando há internet| PG[(Postgres<br/>Supabase)]
-  S2[Sentinel-2] -->|cron · NDVI zonal| PG
-  PG -->|SSE autenticado| WEB[Painel web]
-  PG --> APP[App de campo]
-```
+<img src="../assets/diagramas/arquitetura.png" alt="Cadeia Con-Hectar: coleira → LoRa → gateway → nuvem → painel e app" width="100%"/>
 
 | Elo | Tecnologia | Responsabilidade |
 |---|---|---|
