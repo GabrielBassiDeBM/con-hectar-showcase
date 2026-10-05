@@ -157,7 +157,7 @@ Dois dispositivos, projetados do zero: a **coleira**, que vai no pescoço do ani
 <td align="center" width="25%"><img src="assets/hardware/card-coleira-em-campo.jpg" width="100%" alt="Coleira instalada em um animal"/></td>
 </tr>
 <tr>
-<td align="center" valign="top"><sub><b>Coleira</b><br/>GNSS + LoRa, alimentada a bateria</sub></td>
+<td align="center" valign="top"><sub><b>Coleira</b><br/>GNSS + LoRa, a bateria</sub></td>
 <td align="center" valign="top"><sub><b>Gateway</b><br/>Raspberry Pi 5 + LoRa, na sede</sub></td>
 <td align="center" valign="top"><sub><b>Por dentro da coleira</b><br/>MCU, GNSS, rádio e bateria</sub></td>
 <td align="center" valign="top"><sub><b>Teste em animal</b><br/>Fixação no pescoço</sub></td>
@@ -325,18 +325,9 @@ Uma regra da casa: **o que foi medido é marcado como medido; o que foi calculad
 
 <img src="assets/deck/mercado.jpg" alt="TAM, SAM e SOM" width="100%" />
 
-<table>
-<tr>
-<td align="center" width="33%">🐂<br/><b>238 mi</b><br/><sub>cabeças de gado (IBGE, 2024)</sub></td>
-<td align="center" width="33%">🌱<br/><b>167 mi ha</b><br/><sub>de pastagem</sub></td>
-<td align="center" width="33%">💰<br/><b>R$ 1,1 tri</b><br/><sub>movimentados por ano</sub></td>
-</tr>
-<tr>
-<td align="center"><b>TAM</b><br/>R$ 6,21 bi/ano</td>
-<td align="center"><b>SAM</b><br/>R$ 2,12 bi/ano<br/><sub>40.291 propriedades &gt; 1.000 ha</sub></td>
-<td align="center"><b>SOM</b><br/>R$ 25,9 mi de ARR<br/><sub>600 fazendas no ano 5</sub></td>
-</tr>
-</table>
+<p align="center">
+🐂 <b>238 mi</b> cabeças de gado &nbsp;·&nbsp; 🌱 <b>167 mi ha</b> de pastagem &nbsp;·&nbsp; 💰 <b>R$ 1,1 tri</b> movimentados por ano
+</p>
 
 **Modelo:** assinatura de **R$ 3 por cabeça/mês** (ticket médio de R$ 43,2 mil/fazenda/ano numa fazenda-modelo de 1.200 cabeças). Hardware cobrado à parte — venda, aluguel ou financiamento. Cobrar por cabeça, e não por coleira, só se justifica porque o produto entrega **decisão**, não posição.
 
