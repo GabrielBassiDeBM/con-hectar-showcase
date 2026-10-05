@@ -5,7 +5,7 @@
 <br/>
 <br/>
 
-<img src="assets/brand/logo-wordmark-tight-duotone.svg" alt="Con-Hectar" height="34" />
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/brand/logo-wordmark-tight-duotone.svg"><img src="assets/brand/logo-wordmark-tight-dark.svg" alt="Con-Hectar" height="34"/></picture>
 
 ### A nova camada de inteligência para a pecuária brasileira.
 
@@ -45,6 +45,13 @@ fundidas em um **sistema de decisão de pastejo**: quando tirar o lote, para ond
 
 > [!NOTE]
 > **Este é um repositório de apresentação.** Ele documenta o que a Con-Hectar construiu — hardware, firmware, gateway, nuvem, painel web, app e motores de decisão — com fotos reais, arquitetura e números medidos em bancada. O código-fonte de produção é proprietário e fica em repositório privado; acesso para avaliação técnica pode ser concedido sob demanda.
+
+<br/>
+
+<p align="center">
+  <img src="assets/hardware/produtos-hero.jpg" alt="Gateway (cinza) e coleira (amarela) da Con-Hectar" width="100%"/>
+</p>
+<p align="center"><sub><b>Hardware próprio.</b> O gateway (cinza) e a coleira (amarela) — eletrônica, firmware e cases projetados e impressos pela Con-Hectar.</sub></p>
 
 <br/>
 
@@ -90,26 +97,6 @@ A Con-Hectar não vende rastreador. Vende um **sistema de suporte à decisão de
 ## ◆ Como funciona
 
 <img src="assets/deck/como-funciona.jpg" alt="Coleira → LoRa → Gateway → Nuvem → Plataforma" width="100%" />
-
-```mermaid
-flowchart LR
-  subgraph Campo["🐂 No pasto"]
-    GPS["GNSS<br/>NEO-6M"] -->|NMEA| MCU["Coleira<br/>firmware C++"]
-  end
-  MCU -- "LoRa 915 MHz<br/>frames com checksum" --> GW
-  GW -. "ACK → coleira dorme" .-> MCU
-  subgraph Sede["🏠 Na sede da fazenda"]
-    GW["Gateway<br/>Raspberry Pi 5"] --> BUF[("Buffer local<br/>SQLite")]
-  end
-  BUF -- "store & forward<br/>quando há internet" --> DB
-  subgraph Nuvem["☁️ Nuvem"]
-    DB[("Postgres<br/>Supabase + RLS")]
-    SAT["Sentinel-2<br/>NDVI por piquete"] -- "cron diário" --> DB
-    DB --> ENG["Motores de decisão<br/>métricas · rotação · alertas"]
-  end
-  ENG -- "SSE em tempo real" --> WEB["Painel web<br/>Next.js"]
-  ENG --> APP["App de campo<br/>Expo / React Native"]
-```
 
 1. **Coleira** — acorda, obtém um fixo GPS, transmite por LoRa até receber confirmação do gateway e volta a dormir. Projetada para economizar bateria acima de tudo.
 2. **Gateway** — concentra os sinais LoRa de várias coleiras, confirma o recebimento assim que o dado está **no próprio disco**, e encaminha para a nuvem sempre que houver internet. Continua operando quando a internet da fazenda cai.
@@ -160,29 +147,62 @@ Tudo abaixo existe, roda, e foi construído do zero — da solda ao pixel.
 
 ## ◆ Hardware
 
+Dois dispositivos, projetados do zero: a **coleira**, que vai no pescoço do animal, e o **gateway**, que fica na sede da fazenda.
+
 <table>
 <tr>
-<td width="33%" valign="top"><img src="assets/hardware/coleira-e-gateway.jpg" alt="Coleira e gateway Con-Hectar" width="100%"/><br/><sub><b>Coleira e gateway.</b> Os dois dispositivos nos cases finais, impressos em 3D.</sub></td>
-<td width="33%" valign="top"><img src="assets/hardware/coleira-aberta.jpg" alt="Coleira aberta mostrando a eletrônica" width="100%"/><br/><sub><b>Por dentro da coleira.</b> MCU, GNSS, rádio LoRa e bateria acomodados em case projetado sob medida.</sub></td>
-<td width="33%" valign="top"><img src="assets/hardware/coleira-em-campo.jpg" alt="Coleira instalada em um animal" width="100%"/><br/><sub><b>Teste de fixação em animal.</b> Coleira no case final, posicionada no pescoço.</sub></td>
+<td align="center" width="25%"><img src="assets/hardware/card-coleira.jpg" width="100%" alt="Coleira"/></td>
+<td align="center" width="25%"><img src="assets/hardware/card-gateway.jpg" width="100%" alt="Gateway"/></td>
+<td align="center" width="25%"><img src="assets/hardware/card-coleira-aberta.jpg" width="100%" alt="Coleira aberta mostrando a eletrônica"/></td>
+<td align="center" width="25%"><img src="assets/hardware/card-coleira-em-campo.jpg" width="100%" alt="Coleira instalada em um animal"/></td>
+</tr>
+<tr>
+<td align="center" valign="top"><sub><b>Coleira</b><br/>GNSS + LoRa, alimentada a bateria</sub></td>
+<td align="center" valign="top"><sub><b>Gateway</b><br/>Raspberry Pi 5 + LoRa, na sede</sub></td>
+<td align="center" valign="top"><sub><b>Por dentro da coleira</b><br/>MCU, GNSS, rádio e bateria</sub></td>
+<td align="center" valign="top"><sub><b>Teste em animal</b><br/>Fixação no pescoço</sub></td>
 </tr>
 </table>
 
 #### Da folha de caderno ao campo
 
-| ① Esquemático | ② Coleira na bancada | ③ Gateway na bancada | ④ Case final |
-|:-:|:-:|:-:|:-:|
-| <img src="assets/hardware/esboco-esquematico.jpg" width="200"/> | <img src="assets/hardware/prototipo-coleira-bancada.jpg" width="200"/> | <img src="assets/hardware/prototipo-gateway-bancada.jpg" width="200"/> | <img src="assets/hardware/coleira-case.jpg" width="130"/> <img src="assets/hardware/gateway-case.jpg" width="140"/> |
-| Arquitetura e ciclo de sono rascunhados à mão | Arduino + GNSS + LoRa em jumpers | Raspberry Pi 5 + LoRa via UART | Coleira e gateway em cases impressos em 3D |
+<table>
+<tr>
+<th width="25%">① Esquemático</th>
+<th width="25%">② Coleira na bancada</th>
+<th width="25%">③ Gateway na bancada</th>
+<th width="25%">④ Case final</th>
+</tr>
+<tr>
+<td><img src="assets/hardware/evo-1-esquematico.jpg" width="100%" alt="Esquemático à mão"/></td>
+<td><img src="assets/hardware/evo-2-coleira-bancada.jpg" width="100%" alt="Coleira em protoboard"/></td>
+<td><img src="assets/hardware/evo-3-gateway-bancada.jpg" width="100%" alt="Gateway em protoboard"/></td>
+<td><img src="assets/hardware/evo-4-case-final.jpg" width="100%" alt="Cases finais"/></td>
+</tr>
+<tr>
+<td align="center" valign="top"><sub>Arquitetura e ciclo de sono rascunhados à mão</sub></td>
+<td align="center" valign="top"><sub>MCU + GNSS + LoRa em jumpers</sub></td>
+<td align="center" valign="top"><sub>Raspberry Pi 5 + LoRa via UART</sub></td>
+<td align="center" valign="top"><sub>Cases projetados e impressos em 3D</sub></td>
+</tr>
+</table>
 
 #### Modelos 3D
 
-Os cases foram modelados do zero e são os mesmos arquivos exibidos no visualizador 3D da landing page. O GitHub os abre em um visualizador interativo — **clique para girar e dar zoom**:
+Os cases foram modelados do zero — são os mesmos modelos do visualizador 3D da landing page. Clique em uma imagem para abrir o modelo no visualizador interativo do GitHub e **girar, aproximar e inspecionar**.
 
-| [🟡 Coleira — `models/coleira.stl`](models/coleira.stl) | [⬛ Gateway — `models/gateway.stl`](models/gateway.stl) |
-|:-:|:-:|
-| <a href="models/coleira.stl"><img src="assets/hardware/modelo-3d-coleira.png" width="340" alt="Modelo 3D da coleira"/></a> | <a href="models/gateway.stl"><img src="assets/hardware/modelo-3d-gateway.png" width="240" alt="Modelo 3D do gateway"/></a> |
-| 235 × 46 × 80 mm · tampa, base e cobertura | 99 × 72 × 174 mm com antena |
+<table>
+<tr>
+<td align="center" width="50%"><a href="models/coleira.stl"><img src="assets/hardware/modelo-3d-coleira.png" width="100%" alt="Modelo 3D da coleira"/></a></td>
+<td align="center" width="50%"><a href="models/gateway.stl"><img src="assets/hardware/modelo-3d-gateway.png" width="100%" alt="Modelo 3D do gateway"/></a></td>
+</tr>
+<tr>
+<td align="center"><a href="models/coleira.stl"><b>Coleira</b></a> · <code>models/coleira.stl</code></td>
+<td align="center"><a href="models/gateway.stl"><b>Gateway</b></a> · <code>models/gateway.stl</code></td>
+</tr>
+</table>
+
+#### Especificações
 
 | Componente | Coleira | Gateway |
 |---|---|---|
@@ -222,14 +242,25 @@ Os cases foram modelados do zero e são os mesmos arquivos exibidos no visualiza
 
 O mesmo sistema de design no celular do peão, no tablet em campo e no desktop do gerente. O app é construído em Expo/React Native.
 
-| Mapa principal | Ficha do animal | Cercas virtuais | Central de alertas |
-|:-:|:-:|:-:|:-:|
-| <img src="assets/platform/conceito-app-mapa.jpg" width="190"/> | <img src="assets/platform/conceito-app-animal.jpg" width="190"/> | <img src="assets/platform/conceito-app-cercas.jpg" width="190"/> | <img src="assets/platform/conceito-app-alertas.jpg" width="190"/> |
+<table>
+<tr>
+<th width="25%">Mapa principal</th>
+<th width="25%">Ficha do animal</th>
+<th width="25%">Cercas virtuais</th>
+<th width="25%">Central de alertas</th>
+</tr>
+<tr>
+<td align="center"><img src="assets/platform/conceito-app-mapa.jpg" width="100%" alt="Mapa principal"/></td>
+<td align="center"><img src="assets/platform/conceito-app-animal.jpg" width="100%" alt="Ficha do animal"/></td>
+<td align="center"><img src="assets/platform/conceito-app-cercas.jpg" width="100%" alt="Cercas virtuais"/></td>
+<td align="center"><img src="assets/platform/conceito-app-alertas.jpg" width="100%" alt="Central de alertas"/></td>
+</tr>
+</table>
 
 <table>
 <tr>
-<td width="68%"><img src="assets/platform/conceito-web-dashboard.jpg" width="100%" alt="Conceito do dashboard web"/></td>
-<td width="32%"><img src="assets/platform/conceito-tablet.jpg" width="100%" alt="Conceito do app em tablet"/></td>
+<td width="70%" align="center"><img src="assets/platform/conceito-web-dashboard.jpg" width="100%" alt="Conceito do dashboard web"/></td>
+<td width="30%" align="center"><img src="assets/platform/conceito-tablet.jpg" width="100%" alt="Conceito do app em tablet"/></td>
 </tr>
 <tr>
 <td><sub><b>Dashboard web</b> — resumo do rebanho, sugestão de manejo e indicadores de pastagem.</sub></td>
@@ -248,13 +279,13 @@ O mesmo sistema de design no celular do peão, no tablet em campo e no desktop d
 A plataforma é organizada em **cinco camadas**, cada uma alimentando a seguinte. Todas são derivadas **apenas de posição, tempo e satélite** — sem prometer o que o hardware não mede.
 
 ```mermaid
-flowchart TB
-  L0["<b>Camada 0 · Dados canônicos</b><br/>fixos imutáveis · derivadas recalculáveis"]
-  L1["<b>Camada 1 · Comportamento</b><br/>~20 métricas por animal-dia"]
-  L2["<b>Camada 2 · Piquete</b><br/>ciclo de ocupação · curva de esgotamento"]
-  L3["<b>Camada 3 · Satélite</b><br/>NDVI Sentinel-2 com limiares aprendidos por piquete"]
-  L4["<b>Camada 4 · Motor de rotação</b><br/>sair? para onde? quantos dias restam?"]
-  L5["<b>Camada 5 · Motor de alertas</b><br/>anomalias · classificação de silêncio"]
+flowchart LR
+  L0["<b>0 · Dados</b><br/>fixos imutáveis"]
+  L1["<b>1 · Comportamento</b><br/>~20 métricas<br/>por animal-dia"]
+  L2["<b>2 · Piquete</b><br/>ciclo de ocupação"]
+  L3["<b>3 · Satélite</b><br/>NDVI Sentinel-2"]
+  L4["<b>4 · Rotação</b><br/>sair? para onde?"]
+  L5["<b>5 · Alertas</b><br/>anomalias · silêncio"]
   L0 --> L1 --> L2 --> L4
   L3 --> L4
   L1 --> L5
@@ -278,7 +309,7 @@ flowchart TB
 
 Uma regra da casa: **o que foi medido é marcado como medido; o que foi calculado é marcado como calculado.**
 
-| Verificação | Resultado | |
+| Verificação | Resultado | Tipo |
 |---|:-:|---|
 | Link GPS (sentenças NMEA com checksum válido) | **120 / 0** | ✅ medido |
 | Frames de rádio coleira → gateway | **6 / 0 perdidos** | ✅ medido |
@@ -294,10 +325,18 @@ Uma regra da casa: **o que foi medido é marcado como medido; o que foi calculad
 
 <img src="assets/deck/mercado.jpg" alt="TAM, SAM e SOM" width="100%" />
 
-| | | |
-|---|---|---|
-| 🐂 **238 mi** cabeças de gado (IBGE, 2024) | 🌱 **167 mi** ha de pastagem | 💰 **R$ 1,1 tri** movimentados por ano |
-| **TAM** R$ 6,21 bi/ano | **SAM** R$ 2,12 bi/ano — 40.291 propriedades > 1.000 ha | **SOM** R$ 25,9 mi ARR — 600 fazendas no ano 5 |
+<table>
+<tr>
+<td align="center" width="33%">🐂<br/><b>238 mi</b><br/><sub>cabeças de gado (IBGE, 2024)</sub></td>
+<td align="center" width="33%">🌱<br/><b>167 mi ha</b><br/><sub>de pastagem</sub></td>
+<td align="center" width="33%">💰<br/><b>R$ 1,1 tri</b><br/><sub>movimentados por ano</sub></td>
+</tr>
+<tr>
+<td align="center"><b>TAM</b><br/>R$ 6,21 bi/ano</td>
+<td align="center"><b>SAM</b><br/>R$ 2,12 bi/ano<br/><sub>40.291 propriedades &gt; 1.000 ha</sub></td>
+<td align="center"><b>SOM</b><br/>R$ 25,9 mi de ARR<br/><sub>600 fazendas no ano 5</sub></td>
+</tr>
+</table>
 
 **Modelo:** assinatura de **R$ 3 por cabeça/mês** (ticket médio de R$ 43,2 mil/fazenda/ano numa fazenda-modelo de 1.200 cabeças). Hardware cobrado à parte — venda, aluguel ou financiamento. Cobrar por cabeça, e não por coleira, só se justifica porque o produto entrega **decisão**, não posição.
 
